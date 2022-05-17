@@ -18,4 +18,4 @@ spec:
       - name: hello-service
         image: ghcr.io/sebastien1200/hello-service:0.0.1-snapshot
         ports:
-          containerPort: 9090
+        - containerPort: 9090
