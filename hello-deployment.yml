@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: hello-deployment
+  labels:
+    app: hello-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: hello-service
+  template:
+    metadata:
+      labels:
+        app: hello-service
+    spec:
+      containers:
+      - name: hello-service
+        image: ghcr.io/sebastien1200/hello-service:0.0.1-snapshot
+        ports:
+          containerPort: 9090
